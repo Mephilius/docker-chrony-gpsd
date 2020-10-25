@@ -24,12 +24,12 @@ RUN apt-get update \
     && apt-get clean 
 
 # Specify it during `docker run` as parameter: "-p <host_port>:<container_port>"
-EXPOSE 123
+EXPOSE 123 2947
 
 # VOLUME instruction creates unnamed volume and mounts it to the provided path,
 # you can override this behavior by mounting
 # a selected host directory into container: "-v <host_directory>:<container_directory>"
-VOLUME /etc/chrony.conf:/etc/chrony.conf:ro
+VOLUME /etc/chrony/chrony.conf:/etc/chrony/chrony.conf
 VOLUME /var/lib/chrony/chrony.drift:/var/lib/chrony/chrony.drift
 
 # Specify username which will be used during running container
