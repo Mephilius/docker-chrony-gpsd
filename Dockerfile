@@ -17,8 +17,6 @@ ENV NAME="chronyd" RELEASE=1 ARCH=x86_64 VERSION=0
 
 
 COPY apt_packages /tmp/apt_packages
-
-# COPY 
 COPY fs-add/ /
 
 RUN apt-get update \
@@ -37,6 +35,6 @@ VOLUME /etc/chrony.conf:/etc/chrony.conf:ro
 USER 0
 
 # Command which will start service during command `docker run`
-CMD ["/usr/sbin/chronyd", "-d"]
+ENTRYPOINT ["/usr/local/bin/start_chrony.sh"]
 
 
