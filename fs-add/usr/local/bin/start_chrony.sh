@@ -11,4 +11,4 @@ else
 fi
 
 #Start Chrony
-/usr/sbin/chrony -d
+/usr/sbin/chronyd -d

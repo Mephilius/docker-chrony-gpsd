@@ -30,6 +30,7 @@ EXPOSE 123
 # you can override this behavior by mounting
 # a selected host directory into container: "-v <host_directory>:<container_directory>"
 VOLUME /etc/chrony.conf:/etc/chrony.conf:ro
+VOLUME /var/lib/chrony/chrony.drift:/var/lib/chrony/chrony.drift
 
 # Specify username which will be used during running container
 USER 0
